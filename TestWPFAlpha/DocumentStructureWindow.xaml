@@ -1,0 +1,22 @@
+﻿<Window x:Class="TestWPFAlpha.DocumentStructureWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWPFAlpha"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="gridDocumentStructure" x:FieldModifier="public">
+        <Menu Height="25" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="14" Background="#FF3C4B64" Foreground="White">
+            <MenuItem Header="Search" />
+            <MenuItem Header="Close" Height="25" Click="buttonCloseDocumentStructureWindow_Click"/>
+        </Menu>
+        <TreeView x:Name="TreeViewDocumentStructure" x:FieldModifier= "public" Background="#FFEBEBEB" Margin="10,35,10,10">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Members}">
+                    <TextBlock Text="{Binding Name}"/>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
+    </Grid>
+</Window>
